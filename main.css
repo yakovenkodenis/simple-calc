@@ -1,0 +1,96 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+    transition: all .3s;
+}
+
+body {
+    transform: scale(1.5);
+}
+
+table {
+    font-family: 'Open Sans', sans-serif;
+
+    display: block;
+
+    width: 290px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+
+    empty-cells: hide;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+}
+
+input[type='text'] {
+    font-size: 1.1em;
+
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+
+    resize: none;
+    transition: border-color .3s ease 0;
+
+    color: #141414;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    outline: medium none;
+
+    -moz-appearance: none;
+}
+
+input[type='text']:focus,
+input[type='text']:hover {
+    border-color: #1abc9c;
+}
+
+#calc-window {
+    margin-top: 5em;
+}
+
+.btn {
+    display: table-cell;
+
+    width: 70px;
+    margin: 4px;
+    padding: 10px;
+
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
+    vertical-align: middle;
+
+    color: #333;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.btn:hover {
+    border-width: thin;
+    border-color: #1abc9c;
+}
+
+.btn:active {
+    color: #1abc9c;
+    border-width: thin;
+    border-color: transparent;
+}
+
+.btn-func {
+    color: #141414;
+}
+
+.btn-func:hover {
+    border-color: #1abc85;
+}
+
+.btn-func:active {
+    color: #1abc9c;
+    border-color: transparent;
+}
