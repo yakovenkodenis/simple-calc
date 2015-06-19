@@ -4,7 +4,8 @@
 var input = document.getElementById( 'input' );
 input.value = ""; // The initial state if the input field
 var buttons = document.getElementsByClassName( 'btn' );
-var numResult, isOperator, currentOperator, firstNum, secondNum;
+var numResult, isOperator, currentOperator, currentButton, firstNum, secondNum;
+var buttonStyle = document.querySelector('.btn').style;
 
 // Clear the input field
 function clear() {
@@ -39,6 +40,11 @@ function calculate() {
 		input.value += ( currentEl == "." && ( input.value.match(/\./g) || []).length > 0 )
 						? "" : currentEl;
 
+		if ( currentButton ) {
+			currentButton.style.borderColor = "";
+			currentButton.style.color = "";
+		}
+
 	} else if ( (/^\+\/-$/).test(currentEl) ) {
 
 		if (input.value[0] != '-')
@@ -54,16 +60,24 @@ function calculate() {
 		if ( (input.value || "").length <= 0 ) { 
 			clear();
 			return false;
-		};
+		} else {
 
-		firstNum = (input.value || []).length > 0 ? input.value : firstNum;
-		input.value == "";
-		currentOperator = currentEl;
-		isOperator = true;
+			this.style.borderColor = "#1abc9c";
+			this.style.color = "#1abc84"
+			currentButton = this;
 
+			firstNum = (input.value || []).length > 0 ? input.value : firstNum;
+			input.value = "";
+			currentOperator = currentEl;
+			isOperator = true;
+		}
 
 	} else if ( (/=/).test(currentEl) ) {
 
+		if ( currentButton ) {
+			currentButton.style.borderColor = "";
+			currentButton.style.color = "";
+		}
 		secondNum = input.value;
 
 		switch (currentOperator) {
