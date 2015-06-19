@@ -112,6 +112,5 @@ function calculate() {
 		currentOperator = null;
 		firstNum = numResult;
 		input.value = numResult;
-		console.log(numResult);
 	}
 }
