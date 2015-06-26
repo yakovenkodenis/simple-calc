@@ -1,1 +1,3 @@
-# The most simple and primitive calculator ever
+## Calculator
+
+The most simple and primitive js calculator ever
